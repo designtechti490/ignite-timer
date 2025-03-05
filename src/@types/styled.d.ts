@@ -4,7 +4,9 @@ import { defaultTheme } from "../styles/themes/default";
 type ThemeType = typeof defaultTheme;
 
 declare module "styled-components" {
-  export interface DefaultTheme extends ThemeType {
-    boxShadow: string;
-  }
+  // tive que comentar para remover o bug mas o correto seria deixar o código abaixo
+  // export interface DefaultTheme extends ThemeType {
+  // }
+
+  export type DefaultTheme = ThemeType;
 }
