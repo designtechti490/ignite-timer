@@ -51,6 +51,22 @@ const BaseInput = styled.input`
 
 export const TaskInput = styled(BaseInput)`
   flex: 1;
+
+  /* Chrome, Safari, Edge, Opera */
+  &::-webkit-calendar-picker-indicator {
+    display: none !important;
+  }
+
+  /* Firefox */
+  &::-moz-calendar-picker-indicator {
+    display: none !important;
+  }
+
+  /* Microsoft web browsers */
+  &::-ms-clear,
+  &::-ms-reveal {
+    display: none !important;
+  }
 `;
 
 export const MinutesAmountInput = styled(BaseInput)`
