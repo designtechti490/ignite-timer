@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+// TODO: Fix div width and height for mobile
 export const LayoutContainer = styled.div`
   max-width: 74rem;
   height: calc(100vh - 10rem);

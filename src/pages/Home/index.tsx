@@ -8,17 +8,35 @@ import {
   StartCountdownButton,
   TaskInput,
 } from "./styles";
+// import { useState } from "react";
 
+// Controlled vs Uncontrolled
 export default function Home() {
+  // Controlled
+  // const [task, setTask] = useState("");
+
+  // uncontrolled
+  function handleSubmit(event) {
+    event.target.task.value = "";
+  }
+
   return (
     <HomeContainer>
-      <form action="">
+      <form onSubmit={handleSubmit} action="">
         <FormContainer>
           <label htmlFor="task">Vou trabalhar em</label>
+
+          {/* Uncontrolled */}
           <TaskInput
             id="task"
+            // uncontrolled
+            name="task"
             list="task-suggestions"
             placeholder="Dê um nome para o seu projeto"
+
+            // Controlled
+            /* onChange={(e) => setTask(e.target.value)}
+            value={task} */
           />
 
           <datalist id="task-suggestions">
@@ -49,7 +67,7 @@ export default function Home() {
           <span>0</span>
         </CountdownContainer>
 
-        <StartCountdownButton disabled type="submit">
+        <StartCountdownButton disabled={!task} type="submit">
           <Play size={24} />
           Começar
         </StartCountdownButton>
