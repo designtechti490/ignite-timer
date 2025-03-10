@@ -81,10 +81,10 @@ export default function Home() {
           />
 
           <datalist id="task-suggestions">
-            <option value="">Projeto 1</option>
-            <option value="">Projeto 2</option>
-            <option value="">Projeto 3</option>
-            <option value="">Banana</option>
+            <option value="Projeto 1" />
+            <option value="Projeto 2" />
+            <option value="Projeto 3" />
+            <option value="Estudar React" />
           </datalist>
 
           <label htmlFor="minutesAmount">durante</label>
