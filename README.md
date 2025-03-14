@@ -1,54 +1,87 @@
-# React + TypeScript + Vite
+# ⏳Ignite Timer - Pomodoro 🍅
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![preview](github/preview.png)
 
-Currently, two official plugins are available:
+## 🚀 About this Project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Ignite Timer is a Pomodoro technique app built with React, TypeScript, and Vite. This tool helps you manage your time efficiently by alternating periods of intense focus with regular breaks. Made during Ignite Bootcamp on "Creating SPAs with ReactJS" module.
 
-## Expanding the ESLint configuration
+## 📱 Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- ⏱️ Configurable Pomodoro Timer
+- 📊 Session history
+- 🎯 Task definition
+- 🔄 Customizable cycles
+- 🎨Dark and Light Themes
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 🎨 Figma Layout
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+You can view its layout throughth [this link](https://www.figma.com/community/file/1127351821076435124/ignite-timer).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ⚡ Technologies Envolved
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- [React](https://react.dev/learn)
+- [TypeScript](https://typescryptlang.org)
+- [Vite](https://vitejs.dev)
+- [Styled Components](https://www.npmjs.com/package/styled-components)
+- [ESLint](https://github.com/Rocketseat/eslint-config-rocketseat/blob/main/react.js)
+- [React Hook Form](https://react-hook-form.com/)
+- [Zod](https://zod.dev/)
+- [Vitest](https://vitest.dev/)
+
+## 🔧 Setup
+
+![how to setup](./github/setup.png)
+
+## 📝 ESLint Configuration
+
+![eslint-config](./github/eslint-config.png)
+![eslintjson](./github/eslintrsjson.png)
+
+## 🤝 Contributing
+
+Contributions are always welcome! Here's how you can contribute:
+
+1. Fork the project
+2. Create a Branch for your Feature (`git checkout -b feature/AmazingFeature`)
+3. Add your changes (`git add .`)
+4. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+5. Push to the Branch (`git push origin feature/AmazingFeature`)
+6. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License. See the LICENSE file for more details.
+
+## 👨‍💻 Author
+
+<table width="100%">
+
+<tr>
+
+<td align="center">
+
+<a href="https://github.com/designtechti490">
+
+<img src="https://github.com/designtechti490.png" width="100px;" alt=""/>
+
+<br />
+
+<sub>
+
+<b>Marcelo Junior</b>
+          <i>Front End Developer</i>
+
+</sub>
+
+</a>
+
+</td>
+
+</tr>
+
+</table>
+
+---
+
+<p align="center"> Developed with 💜 during Rocketseat's Ignite bootcamp </p>
