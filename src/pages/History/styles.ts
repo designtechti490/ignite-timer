@@ -65,6 +65,14 @@ export const HistoryList = styled.div`
     }
   }
 
+  @media (max-width: 1024px) {
+    table {
+      td {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
   @media (max-width: 768px) {
     table {
       th {
@@ -105,5 +113,33 @@ export const Status = styled.span<StatusProps>`
     height: 0.5rem;
     border-radius: 50%;
     background: ${(props) => props.theme[STATUS_COLORS[props.statusColor]]};
+  }
+`;
+
+export const PaginationContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+
+  .pagination {
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+
+    .page-item {
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      background: ${(props) => props.theme["gray-600"]};
+      color: ${(props) => props.theme["gray-100"]};
+
+      &.active {
+        background: ${(props) => props.theme["green-500"]};
+      }
+
+      &:hover:not(.active) {
+        background: ${(props) => props.theme["green-700"]};
+      }
+    }
   }
 `;

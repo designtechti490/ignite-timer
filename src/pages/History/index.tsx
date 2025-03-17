@@ -1,11 +1,29 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import ReactPaginate from "react-paginate";
 import { CyclesContext } from "../../contexts/CyclesContext";
-import { HistoryContainer, HistoryList, Status } from "./styles";
+import { useTasksPerPage } from "../../hooks/useTasksPerPage";
+import {
+  HistoryContainer,
+  HistoryList,
+  PaginationContainer,
+  Status,
+} from "./styles";
 import { formatDistanceToNow } from "date-fns";
 import { ptBR } from "date-fns/locale/pt-BR";
 
 export default function History() {
   const { cycles } = useContext(CyclesContext);
+  const [currentPage, setCurrentPage] = useState(0);
+  const tasksPerPage = useTasksPerPage();
+
+  const offset = currentPage * tasksPerPage;
+  const currentPageTasks = cycles.slice(offset, offset + tasksPerPage);
+  const pageCount = Math.ceil(cycles.length / tasksPerPage);
+
+  function handlePageChange({ selected }: { selected: number }) {
+    setCurrentPage(selected);
+  }
+
   return (
     <HistoryContainer>
       <h1>Meu histórico</h1>
@@ -21,7 +39,7 @@ export default function History() {
             </tr>
           </thead>
           <tbody>
-            {cycles.map((cycle) => {
+            {currentPageTasks.map((cycle) => {
               return (
                 <tr key={cycle.id}>
                   <td>{cycle.task}</td>
@@ -49,6 +67,23 @@ export default function History() {
           </tbody>
         </table>
       </HistoryList>
+
+      <PaginationContainer>
+        <ReactPaginate
+          previousLabel="Anterior"
+          nextLabel="Próxima"
+          pageCount={pageCount}
+          onPageChange={handlePageChange}
+          containerClassName="pagination"
+          activeClassName="active"
+          pageClassName="page-item"
+          pageLinkClassName="page-link"
+          previousClassName="page-item"
+          previousLinkClassName="page-link"
+          nextClassName="page-item"
+          nextLinkClassName="page-link"
+        />
+      </PaginationContainer>
     </HistoryContainer>
   );
 }
